@@ -1,0 +1,17 @@
+# Goose Goose Go Search Engine: http://goosegoosego.com/
+# https://plus.google.com/117604851036691794693/posts/TdWMtfWFDKM
+
+name: ggg
+
+framework:
+  type: perl
+
+hooks:
+  pre-staging:
+    - wget https://raw.github.com/gist/1113894/13b811d3849e6bd24f54b3abebf7bf0822bacbf9/ggg.pl
+    - mv ggg.pl app.psgi
+
+requirements:
+  ppm:
+    - Dancer
+    - Plack::Request
